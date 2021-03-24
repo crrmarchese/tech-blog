@@ -14,9 +14,16 @@ Blog.init(
     post_title: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        len: [1]
+      }
     },
     post_text: {
       type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
     },
     date_created: {
       type: DataTypes.DATE,
@@ -36,7 +43,7 @@ Blog.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'blog',
   }
 );
 
