@@ -19,7 +19,7 @@ Blog.init(
       }
     },
     post_text: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
       validate: {
         len: [1]
@@ -28,7 +28,7 @@ Blog.init(
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW,
+      defaultValue: DataTypes.NOW, // This way, the current date/time will be used to populate this column (at the moment of insertion)
     },
     user_id: {
       type: DataTypes.INTEGER,

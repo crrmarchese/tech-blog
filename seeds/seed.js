@@ -1,23 +1,28 @@
 const sequelize = require('../config/connection');
-const { User, Blog } = require('../models');
 
-const userData = require('./userData.json');
-const blogData = require('./blogData.json');
+const Users = require('../models/Users');
+const Blog = require('../models/Blog');
+const Comments = require('../models/Comments');
 
-const seedDatabase = async () => {
-  await sequelize.sync({ force: true });
+const blogSeedData = require('./blogSeedData.json');
+const userSeedData = require('./userSeedData.json');
+const commentsSeedData = require('./commentsSeedData.json');
 
-  const users = await User.bulkCreate(userData, {
-    individualHooks: true,
-    returning: true,
-  });
-
-  for (const blog of blogData) {
-    await Blog.create({
-      ...blog,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
+// TODO Use async / await to Refactor the seedDatabase function below
+const seedDatabase = () => {
+  return sequelize.sync({ force: true }).then(() => {
+    Users.bulkCreate(userSeedData).then(() => {
+      Blog.bulkCreate(blogSeedData).then(() => {
+        Comments.bulkCreate(commentsSeedData).then(() => {
+          console.log('All Seeds Planted');
+        });
+      });
     });
-  }
+  })
+
+  
+
+  
 
   process.exit(0);
 };
