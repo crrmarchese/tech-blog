@@ -1,0 +1,17 @@
+:root {
+    --bright-orange: #fcbc3e;
+}
+
+body {
+    font-family: 'Raleway', sans-serif; 
+}
+.navbar-brand {
+    font-family: 'Coda', cursive;
+    font-size: 2rem;
+}
+.card-header {
+   background-color: var(--bright-orange);
+   color: #212529;
+   font-weight: 700;  
+}
+
