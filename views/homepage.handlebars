@@ -1,0 +1,59 @@
+<!-- For each gallery, the 'gallery-details' partial is used to render the gallery data -->
+{{!-- {{#each galleries as |gallery|}}
+{{> gallery-details}}
+{{/each}} --}}
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div class="col d-flex align-items-stretch">
+              <div class="card shadow-sm">
+                <div class="card-header">
+                  Why MVC is so important
+                </div>
+                  <div class="card-body">
+                      <p class="card-text">MVC allows developers to maintain a true separation of concerns, devising their code between the Model layer for data, the View layer for design, and the Controller layer for application logic.</p>
+                          <div class="d-flex justify-content-between align-items-center">
+                              <div class="btn-group">
+                                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                              </div>
+                          <small class="text-muted">Posted by Xandromus on 5/8/20</small>
+                          </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col d-flex align-items-stretch">
+              <div class="card shadow-sm">
+                <div class="card-header">
+                  Authentication vs. Authorization
+                </div>
+                  <div class="card-body">
+                      <p class="card-text">There is a difference between authentication and authorization. Authentication means confirming your own identity, whereas authorization means being allowed access to the system.</p>
+                          <div class="d-flex justify-content-between align-items-center">
+                              <div class="btn-group">
+                                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                              </div>
+                          <small class="text-muted">Posted by Xandromus on 5/8/20</small>
+                          </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col d-flex align-items-stretch">
+            <div class="card shadow-sm">
+              <div class="card-header">
+                Object-Relational Mapping
+              </div>
+                <div class="card-body">
+                    <p class="card-text">I have really loved learning about ORMs. It's really simplified the way I create queries in SQL!</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                            </div>
+                        <small class="text-muted date">Posted by Lernantino on 5/8/20</small>
+                        </div>
+                </div>
+            </div>
+        </div>
+      </div>    
+
